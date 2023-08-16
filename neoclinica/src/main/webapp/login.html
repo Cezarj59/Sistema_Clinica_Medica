@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+
+<style>
+/* Adicione um estilo para fazer o footer ficar fixo no fim da página */
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh; /* Ocupa pelo menos 100% da altura da viewport */
+}
+
+main {
+	flex: 1; /* O conteúdo principal ocupa o espaço restante */
+}
+</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+		<div class="container">
+			<a class="navbar-brand" href="#">Neo Clinica</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+				aria-controls="navbarNavDropdown" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="index.html">Home</a></li>
+				</ul>
+			</div>
+
+			<!-- Usar um ID diferente para evitar conflito -->
+			<div class="collapse navbar-collapse" id="navbarNavDropdownRight">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item"><a class="nav-link"
+						href="cadastro-usuario.jsp">Cadastrar</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<main class="container py-4 mt-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-4 col-md-6 col-sm-8">
+				<form name="form_pesquisa" id="form_pesquisa" method="post"
+					action="" onsubmit="submitForm(); return false;">
+					<div id="login-box" class="bg-dark text-light p-4 rounded">
+						<h2 class="text-center">Login</h2>
+						<p class="text-center">Entre com seus dados corretamente para
+							acessar o sistema.</p>
+						<div class="mb-3">
+							<label for="inputUsernameOrEmail" class="form-label">Email:</label>
+							<input type="text" name="inputUsernameOrEmail"
+								class="form-control" id="inputUsernameOrEmail">
+						</div>
+						<div class="mb-3">
+							<label for="inputSenha" class="form-label">Password:</label> <input
+								type="password" name="inputSenha" class="form-control"
+								id="inputSenha">
+						</div>
+						<div class="mb-3 form-check">
+							<input type="checkbox" class="form-check-input"
+								id="rememberCheckbox" name="remember" value="1"> <label
+								class="form-check-label" for="rememberCheckbox">Remember
+								Me</label> <a href="#" class="ms-3">Esqueceu a senha?</a>
+						</div>
+						<div class="mb-3 form-check">
+							<input type="checkbox" class="form-check-input"
+								id="adminLoginCheckbox" name="isAdmin" value="1"> <label
+								class="form-check-label" for="adminLoginCheckbox">Login
+								para Administradores</label>
+						</div>
+						<button type="submit" class="btn btn-primary">Login</button>
+						<input type="hidden" name="acao" value="logar">
+					</div>
+				</form>
+			</div>
+		</div>
+	</main>
+	<script>
+			function submitForm() {
+				const form = document.getElementById('form_pesquisa');
+				const adminLoginCheckbox = document
+						.getElementById('adminLoginCheckbox');
+
+				if (adminLoginCheckbox.checked) {
+					form.action = 'loginAdm';
+				} else {
+					form.action = 'loginUsuario';
+				}
+
+				form.submit();
+			}
+		</script>
+
+	<footer class="bg-dark text-light text-center py-4">
+		<div class="container">
+			<p>&copy; 2023 Neo Clínica. Todos os direitos reservados.</p>
+			<p>
+				Desenvolvido por <a href="#">Seu Nome</a>
+			</p>
+		</div>
+	</footer>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

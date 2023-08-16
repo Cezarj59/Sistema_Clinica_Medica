@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+
+.index-home{
+	background: url(../img/medica.jpg) no-repeat left top;
+}
+
+.index-user {
+	background: url(../img/clinica.jpg) no-repeat left top;
+}
+
+
+.index-adm {
+	background: url(../img/clinica.jpg) no-repeat left top;
+}
