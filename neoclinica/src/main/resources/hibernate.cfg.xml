@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+	<session-factory>
+		<!-- <property name="hibernate.connection.driver_class">org.postgresql.Driver</property> 
+			<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/clinica_database</property> 
+			<property name="hibernate.connection.username">postgres</property> 
+			<property name="hibernate.connection.password">1993</property> 
+			<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property> -->
+
+
+
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.password">199359</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/clinica_database</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MariaDBDialect</property>
+		
+		
+
+
+		<!-- Configurações do banco de dados -->
+		
+		
+		<property name="hibernate.connection.CharSet">utf8</property>
+		<property name="hibernate.connection.characterEncoding">utf8</property>
+		<property name="hibernate.connection.useUnicode">true</property>
+
+		<property name="hibernate.connection.autocommit">true</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.archive.autodetection">class</property>
+
+
+
+		<!-- Mapeamento das classes -->
+		<mapping class="model.agendamento.Agendamento" />
+		<mapping class="model.especialidade.Especialidade" />
+		<mapping class="model.exame.Exame" />
+		<mapping class="model.medico.Medico" />
+		<mapping class="model.medicosExames.MedicosExames" />
+		<mapping class="model.pessoa.Pessoa" />
+		<mapping class="model.pessoa.Administrador" />
+		<mapping class="model.pessoa.Paciente" />
+		<mapping class="model.usuarios.Usuario" />
+
+	</session-factory>
+
+</hibernate-configuration>

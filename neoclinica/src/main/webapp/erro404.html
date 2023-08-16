@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Erro404</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .error-container {
+    position: relative;
+    text-align: center;
+  }
+  
+  .error-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    color: white;
+    z-index: 1;
+    backdrop-filter: blur(8px);
+    padding: 20px;
+  }
+  
+  .error-image {
+    width: 70vw;
+    height: 98vh;
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+</head>
+<body>
+  <div class="error-container">
+    <img class="error-image" alt="" src="./shared/img/erro404Jacare.jpeg">
+    <div class="error-text">
+      <p>Erro 404 - O jacaré comeu o site</p>
+    </div>
+  </div>
+</body>
+</html>
